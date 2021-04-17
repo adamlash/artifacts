@@ -18,7 +18,7 @@ echo "funcappid": ${funcappid}
 
 
 # echo 'installing azure cli extension'
-# az extension add --name azure-iot -y
+az extension add --name azure-iot -y
 
 # echo 'retrieve model'
 curl https://raw.githubusercontent.com/adamlash/artifacts/main/turbine.json -o turbine.json
