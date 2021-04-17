@@ -40,6 +40,4 @@ az dt endpoint create eventgrid --dt-name $adtname --eventgrid-resource-group $r
 az dt route create --dt-name $adtname --endpoint-name "$egname-ep" --route-name "$egname-rt"
 
 # Create Subscriptions???
-az eventgrid event-subscription create --name "$egname-broadcast-sub" \
-    --source-resource-id $egid \
-    --endpoint "$funcappid/functions/property --endpoint-type azurefunction
+az eventgrid event-subscription create --name "$egname-broadcast-sub" --source-resource-id $egid --endpoint "$funcappid/functions/property --endpoint-type azurefunction
