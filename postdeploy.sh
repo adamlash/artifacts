@@ -26,7 +26,7 @@ az config set extension.use_dynamic_install=yes_without_prompt
 az extension add --name azure-iot -y
 
 # echo 'retrieve files'
-git clone https://github.com/adamlash/artifacts.git .
+git clone https://github.com/adamlash/artifacts.git
 
 # echo 'input model'
 turbineid=$(az dt model create -n $adtname --models ./artifacts/models/turbine.json --query [].id -o tsv)
@@ -47,4 +47,4 @@ az dt route create --dt-name $adtname --endpoint-name "$egname-ep" --route-name 
 az eventgrid event-subscription create --name "$egname-broadcast-sub" --source-resource-id $egid --endpoint "$funcappid/functions/broadcast" --endpoint-type azurefunction
 
 # Retrieve and Upload models to blob storage
-az storage blob upload-batch --account-name $storagename -d $containername -s assets
+az storage blob upload-batch --account-name $storagename -d $containername -s "./artifacts/assets"
