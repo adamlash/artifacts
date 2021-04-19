@@ -29,7 +29,7 @@ az extension add --name azure-iot -y
 git clone https://github.com/adamlash/artifacts.git
 
 # echo 'input model'
-turbineid=$(az dt model create -n $adtname --models models/turbine.json --query [].id -o tsv)
+turbineid=$(az dt model create -n $adtname --models ./models/turbine.json --query [].id -o tsv)
 
 # echo 'instantiate ADT Instances'
 for i in {98..107}
