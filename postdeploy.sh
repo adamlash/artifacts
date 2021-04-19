@@ -26,7 +26,7 @@ az config set extension.use_dynamic_install=yes_without_prompt
 az extension add --name azure-iot -y
 
 # echo 'retrieve files'
-git clone git@github.com:adamlash/artifacts.git
+git clone https://github.com/adamlash/artifacts.git
 
 # echo 'input model'
 turbineid=$(az dt model create -n $adtname --models models/turbine.json --query [].id -o tsv)
